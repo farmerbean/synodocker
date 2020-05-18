@@ -1,0 +1,28 @@
+version: '2'
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:v4.4
+    hostname: pihole
+    domainname: farmerbean.dev
+    mac_address: d0:ca:ab:cd:ef:01
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 443/tcp
+      - 53/tcp
+      - 53/udp
+      - 67/udp
+      - 80/tcp
+    environment:
+      ServerIP: 192.168.1.201
+      WEBPASSWORD: "password"
+      VIRTUAL_HOST: pihole.farmerbean.dev
+      DNS1: 127.0.0.1
+      DNS2: 8.8.8.8
+    volumes:
+      - /volume2/docker/pihole/volume-configs:/etc/pihole:rw
+      - /volume2/docker/pihole/pihole-configs:/etc/hosts:ro
+#      - /volume2/docker/pihole/resolv.conf:/etc/resolv.conf:ro
+      - /volume2/docker/pihole/dnsmasq.d:/etc/dnsmasq.d/:ro
+    restart: always

@@ -5,7 +5,7 @@ Docker Services for farmerbean.dev
 From /volume2/docker/
 
 
-docker-compose up <service> -d
+sudo docker-compose up -d <service>
 
 
 List of services 
@@ -19,3 +19,5 @@ Updating:
 $sudo docker-compose pull
 $sudo docker-compose up -d
 
+Stopping:
+$sudo docker-compose down

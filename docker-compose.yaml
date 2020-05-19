@@ -12,6 +12,8 @@ services:
     extends:
       service: lazydocker
       file: lazy/docker-compose.yaml
+    networks:
+      home:
         
 networks:
   home:

@@ -19,11 +19,13 @@ services:
       WEBPASSWORD: password
       VIRTUAL_HOST: pihole.farmerbean.dev
       DNS1: 127.0.0.1
-      DNS2: 8.8.8.8
+      DNS2: 9.9.9.11
       DNSMASQ_LISTENING: all
       TZ: "Europe/Amsterdam"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /volume2/docker/pihole/pihole-configs:/etc/pihole
       - /volume2/docker/pihole/dnsmasq.d-configs:/etc/dnsmasq.d
+      - /volume2/docker/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf:ro
+      - /volume2/docker/certs:/home/pi/certs:ro
     restart: always

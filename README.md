@@ -8,3 +8,10 @@ List of services docker-compose up <service>
 
 pihole
 lazydocker
+
+
+Updating:
+
+$sudo docker-compose pull
+$sudo docker-compose up -d
+

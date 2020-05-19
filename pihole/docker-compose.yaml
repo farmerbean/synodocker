@@ -26,6 +26,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /volume2/docker/pihole/pihole-configs:/etc/pihole
       - /volume2/docker/pihole/dnsmasq.d-configs:/etc/dnsmasq.d
-      - /volume2/docker/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf:ro
-      - /volume2/docker/certs:/home/pi/certs:ro
+      - /volume2/docker/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf
+      - /volume2/docker/certs:/home/pi/certs
     restart: always

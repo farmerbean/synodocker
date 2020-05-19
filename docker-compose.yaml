@@ -17,9 +17,9 @@ networks:
   home:
     driver: macvlan
     driver_opts:
-      parent: eth0
+      parent: ovs_eth0
     ipam:
       config:
         - subnet: 192.168.1.0/24
           gateway: 192.168.1.1
-          ip_range: 192.168.1.192/28
+          ip_range: 192.168.1.192/27

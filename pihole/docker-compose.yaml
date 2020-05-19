@@ -2,7 +2,7 @@ version: '2'
 services:
   pihole:
     container_name: pihole
-    image: pihole/pihole:latest
+    image: pihole/pihole:v5.0
     hostname: pihole
     domainname: farmerbean.dev
     mac_address: d0:ca:ab:cd:ef:01
@@ -16,7 +16,7 @@ services:
       - 80/tcp
     environment:
       ServerIP: 192.168.1.201
-      WEBPASSWORD: "password"
+      WEBPASSWORD: password
       VIRTUAL_HOST: pihole.farmerbean.dev
       DNS1: 127.0.0.1
       DNS2: 8.8.8.8

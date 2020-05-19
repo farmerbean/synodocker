@@ -4,7 +4,11 @@ Docker Services for farmerbean.dev
 
 From /volume2/docker/
 
-List of services docker-compose up <service>
+
+docker-compose up <service> -d
+
+
+List of services 
 
 pihole
 lazydocker

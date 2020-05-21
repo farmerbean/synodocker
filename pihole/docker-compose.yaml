@@ -4,7 +4,7 @@ services:
     container_name: pihole
     image: pihole/pihole:v5.0
     hostname: pihole
-    domainname: farmerbean.dev
+    domainname: ${DOMAINNAME}
     mac_address: d0:ca:ab:cd:ef:01
     cap_add:
       - NET_ADMIN
@@ -17,15 +17,15 @@ services:
     environment:
       ServerIP: 192.168.1.201
       WEBPASSWORD: password
-      VIRTUAL_HOST: pihole.farmerbean.dev
+      VIRTUAL_HOST: pihole.${DOMAINNAME}
       DNS1: 127.0.0.1
       DNS2: 9.9.9.11
       DNSMASQ_LISTENING: all
       TZ: "Europe/Amsterdam"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /volume2/docker/pihole/pihole-configs:/etc/pihole
-      - /volume2/docker/pihole/dnsmasq.d-configs:/etc/dnsmasq.d
-      - /volume2/docker/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf
-      - /volume2/docker/certs:/home/pi/certs
+      - ${DOCKERHOME}/pihole/pihole-configs:/etc/pihole
+      - ${DOCKERHOME}/pihole/dnsmasq.d-configs:/etc/dnsmasq.d
+      - ${DOCKERHOME}/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf
+      - ${CERTHOME}:/home/pi/certs
     restart: always

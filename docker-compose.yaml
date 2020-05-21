@@ -1,7 +1,6 @@
 version: '2'
 services:
   pihole:
-    command: sh -c "env; sleep 900"
     extends:
       service: pihole
       file: pihole/docker-compose.yaml

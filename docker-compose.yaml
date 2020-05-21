@@ -3,6 +3,7 @@ services:
   pihole:
     extends:
       service: pihole
+      command: sh -c "env; sleep 900"
       file: pihole/docker-compose.yaml
     networks:
       home:

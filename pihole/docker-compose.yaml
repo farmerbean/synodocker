@@ -1,9 +1,9 @@
 version: '2'
 services:
   pihole:
-    container_name: pihole
+    container_name: ${PIHOST}
     image: pihole/pihole:v5.0
-    hostname: pihole
+    hostname: ${PIHOST}
     domainname: ${DOMAINNAME}
     mac_address: d0:ca:ab:cd:ef:01
     cap_add:
@@ -17,7 +17,7 @@ services:
     environment:
       ServerIP: 192.168.1.201
       WEBPASSWORD: password
-      VIRTUAL_HOST: pihole.${DOMAINNAME}
+      VIRTUAL_HOST: ${PIHOST}.${DOMAINNAME}
       DNS1: 127.0.0.1
       DNS2: 9.9.9.11
       DNSMASQ_LISTENING: all
@@ -27,5 +27,5 @@ services:
       - ${DOCKERHOME}/pihole/pihole-configs:/etc/pihole
       - ${DOCKERHOME}/pihole/dnsmasq.d-configs:/etc/dnsmasq.d
       - ${DOCKERHOME}/pihole/pihole-configs/external.conf:/etc/lighttpd/external.conf
-      - ${CERTHOME}:/home/pi/certs
+      - ${CERTHOME}:/home/pi/certs:ro
     restart: always

@@ -13,7 +13,7 @@ services:
       service: lazydocker
       file: lazy/docker-compose.yaml
     networks:
-      home:
+      home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
         
 networks:
   home:

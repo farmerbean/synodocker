@@ -4,4 +4,4 @@
 ::1        pihole
 
 192.168.1.1   gateway
-192.168.1.201 pihole
+$(PIIPV4) $(PIHOST)

@@ -1,35 +1,43 @@
 # synodocker
-docker-compose files for Synology
-Docker Services for farmerbean.dev
 
-From /volume2/docker/
+This is my docker-compose repo for spinning up Docker services on Synology NAS (DS1515+ with DSM6x). There are three accompanying medium.com stories that relate to this repo that cover:
 
+ 1. Configuring DDNS with Cloudflare and generating a TLS certificate
+ 2. Configuring macvlan networking on Synology for Docker containers
+ 3. Configuring pi-hole - [medium.com](https://medium.com/@corcoran/installing-pihole-with-docker-on-synology-nas-dsm6-e77f4f0dcb58)
 
-sudo docker-compose up -d <service>
+## Docker Services for farmerbean.dev
+Service environment  variables are in ~/.env
+### Services:
+ - lazydocker
+ - pi-hole
+ 
+## Start/Stop Services
+     $ sudo docker-compose up -d <service>
+     $ sudo docker-compose down -d <service>
 
-.env file for service environment variables
+## Updating
 
-List of services 
+    $ sudo docker-compose pull
+    
+    $ sudo docker-compose up -d  
 
-pihole
-lazydocker
+## Networking  
 
+Refer to [this story](https://medium.com/@corcoran/docker-with-macvlan-networking-on-synology-dsm6-741285a0297d?source=---------4------------------)
 
-Updating:
+### Basic execution
+I'm assuming your internal physical network is 192.168.1.x . Confine your internal DHCP scope if possible to avoid clashes when deploying your containers. The [ip] commands  deal with creating a virtual lan that bridges your physical network, the docker network commands deal with understanding what the host (physical) network looks like:
 
-$sudo docker-compose pull
-$sudo docker-compose up -d
+    $ ip link add macvlan0 link eth0 type macvlan mode bridge
+    $ ip addr add 192.168.1.192/27 dev macvlan0 # 192.168.1.192 - 192.168.1.223 255.255.255.224
 
-Stopping:
-$sudo docker-compose down
+Then (synoservices is the name of the docker network here)
 
+    $ sudo docker network create --driver=macvlan --gateway=192.168.1.1 --subnet=192.168.1.0/24 —-ip-range=192.168.1.192/27 --o parent=eth0 synoservices
 
-Networking
+You can remove this afterwards running:
 
+    $ sudo docker network remove synoservices
 
-ip link add macvlan0 link eth0 type macvlan mode bridge # or ovs_eth0 if VMM is installed
-ip addr add 192.168.1.192/27 dev macvlan0 # 192.168.1.192 - 192.168.1.223 255.255.255.224
-
-
-sudo docker network create --driver=macvlan --gateway=192.168.1.1 --subnet=192.168.1.0/24  —-ip-range=192.168.1.192/28 --o parent=eth0 synoservices
-
+> Written with [StackEdit](https://stackedit.io/).

@@ -1,14 +1,10 @@
-# Create TLS Certs for Web Interface
-```
+# Pi-hole Service for farmerbean.dev
+Service environment  variables are in ~/.env
+## Services:
+ - pi-hole
 
-sudo cat /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.key \
-           /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.cer | \
-  sudo tee /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.combined.pem
+## Create TLS Certs for Web Interface
 
-```
-
-Sources:
-
-https://discourse.pi-hole.net/t/setup-on-synology-docker/18067/33
-
-https://gist.github.com/xirixiz/ecad37bac9a07c2a1204ab4f9a17db3c
+    $ sudo cat /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.key \
+    /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.cer | \
+    sudo tee /usr/local/share/acme.sh/syno.farmerbean.dev/syno.farmerbean.dev.combined.pem

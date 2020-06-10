@@ -18,7 +18,7 @@ services:
       - 127.0.0.1 #localhost
       - 1.1.1.1   #cloudflare
     environment:
-      ServerIP: 192.168.1.201
+      ServerIP: $(PIIPV4)
       WEBPASSWORD: password
       VIRTUAL_HOST: ${PIHOST}.${DOMAINNAME}
       DNS1: 1.1.1.1 #cloudflare

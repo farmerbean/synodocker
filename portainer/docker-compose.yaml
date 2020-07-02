@@ -13,8 +13,8 @@ services:
     tty: true
     environment:
       ssl:
-      sslcert: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
-      sslkey: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
+      sslcert: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
+      sslkey: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro

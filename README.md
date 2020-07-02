@@ -10,6 +10,7 @@ This is my docker-compose repo for spinning up Docker services on Synology NAS (
 Service environment  variables are in ~/.env
 ### Services:
  - lazydocker
+ - portainer
  - pi-hole
  
 ## Start/Stop Services

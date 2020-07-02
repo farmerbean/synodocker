@@ -7,7 +7,13 @@ services:
     networks:
       home:
         ipv4_address: 192.168.1.201
-
+  portainer:
+    extends:
+      service: portainer
+      file: portainer/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: 192.168.1.202
   lazydocker:
     extends:
       service: lazydocker

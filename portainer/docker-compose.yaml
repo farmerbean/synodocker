@@ -1,0 +1,15 @@
+version: '2'
+services:
+  portainer:
+    # command: -H tcp://tasks.agent:9001 --tlsskipverify
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    image: portainer/portainer
+    container_name: portainer
+    stdin_open: true
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKERHOME}/portainer:/data portainer/portainer
+    restart: always

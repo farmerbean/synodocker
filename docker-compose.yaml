@@ -6,14 +6,14 @@ services:
       file: pihole/docker-compose.yaml
     networks:
       home:
-        ipv4_address: 192.168.1.201
+        ipv4_address: ${PIIPV4}
   portainer:
     extends:
       service: portainer
       file: portainer/docker-compose.yaml
     networks:
       home:
-        ipv4_address: 192.168.1.202
+        ipv4_address: ${PORTIPV4}
   lazydocker:
     extends:
       service: lazydocker

@@ -1,7 +1,7 @@
 version: '2'
 services:
   portainer:
-    command: -H unix:///var/run/docker.sock
+    # command: -H unix:///var/run/docker.sock
     ports:
       - "443:9000"
       - "8000:8000"

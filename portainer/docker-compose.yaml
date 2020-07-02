@@ -1,15 +1,23 @@
 version: '2'
 services:
   portainer:
-    # command: -H tcp://tasks.agent:9001 --tlsskipverify
+    command: -H unix:///var/run/docker.sock
     ports:
-      - "9000:9000"
+      - "443:9000"
       - "8000:8000"
     image: portainer/portainer
     container_name: portainer
+    cap_add:
+      - NET_ADMIN
     stdin_open: true
     tty: true
+    environment:
+      ssl: true
+      sslcert: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
+      sslkey: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/portainer:/data portainer/portainer
+      - ${CERTHOME}:/certs:ro
     restart: always

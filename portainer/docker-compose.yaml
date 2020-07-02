@@ -12,9 +12,13 @@ services:
     stdin_open: true
     tty: true
     environment:
-      ssl:
-      sslcert: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
-      sslkey: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
+      CAP_HOST_MANAGEMENT: 1
+      VIRTUAL_HOST: ${DSMHOST}.${DOMAINNAME}
+      LETSENCRYPT_HOST: ${DSMHOST}.${DOMAINNAME}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      SSL:
+      SSLCERT: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
+      SSLKEY: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro

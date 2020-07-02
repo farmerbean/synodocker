@@ -1,6 +1,6 @@
 version: '2'
 services:
-  auto-youtube:
+  autoyoutube:
     image: xiovv/go-auto-yt:stable
     container_name: auto-youtube
     restart: always

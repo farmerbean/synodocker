@@ -16,7 +16,7 @@ services:
         ipv4_address: ${PORTIPV4}
   auto-youtube:
     extends:
-      service: auto-youtube
+      service: autoyoutube
       file: auto-YouTube/docker-compose.yaml
     networks:
       home:

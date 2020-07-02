@@ -17,7 +17,7 @@ services:
       LETSENCRYPT_HOST: ${DSMHOST}.${DOMAINNAME}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
       SSL:
-      SSLCERT: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
+      SSLCERT: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.crt
       SSLKEY: /certs/${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

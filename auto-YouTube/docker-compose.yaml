@@ -1,0 +1,20 @@
+version: '2'
+services:
+  auto-youtube:
+    image: xiovv/go-auto-yt:stable
+    container_name: auto-youtube
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERHOME}/autoyt/downloads:/app/downloads
+      - ${CERTHOME}:/certs:ro
+      - ${DOCKERHOME}/autoyt/config:/app/config
+    environment:
+      - PUID=1234
+      - PGID=5678
+      - UMASK_SET=022
+    ports:
+    - 8080:8080
+volumes:
+  downloads:
+  config:

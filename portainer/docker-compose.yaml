@@ -12,7 +12,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      ssl: true
+      ssl:
       sslcert: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.cer
       sslkey: /${DSMHOST}.${DOMAINNAME}/${DSMHOST}.${DOMAINNAME}.key
     volumes:

@@ -27,7 +27,13 @@ services:
       file: lazy/docker-compose.yaml
     networks:
       home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
-        
+  phpipam:
+    extends:
+      service: phpipam
+      file: phpipam/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: ${PHPIPAMV4}
 networks:
   home:
     driver: macvlan

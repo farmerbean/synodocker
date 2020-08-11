@@ -1,8 +1,6 @@
 version: '2'
 services:
   phpipam:
-    depends_on:
-      - mysql
     image: pierrecdn/phpipam
     restart: always
     environment:

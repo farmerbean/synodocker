@@ -28,6 +28,8 @@ services:
     networks:
       home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
   phpipam:
+    depends_on:
+      - mysql
     extends:
       service: phpipam
       file: phpipam/docker-compose.yaml
@@ -40,7 +42,7 @@ services:
       file: mysql/docker-compose.yaml
     networks:
       home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
-      
+
 networks:
   home:
     driver: macvlan

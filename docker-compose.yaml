@@ -34,6 +34,13 @@ services:
     networks:
       home:
         ipv4_address: ${PHPIPAMV4}
+  mysql:
+    extends:
+      service: mysql
+      file: mysql/docker-compose.yaml
+    networks:
+      home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
+      
 networks:
   home:
     driver: macvlan

@@ -8,7 +8,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/mysql/dbdata:/var/lib/mysql
-  ipam:
+  phpipam:
     depends_on:
       - mysql
     image: pierrecdn/phpipam

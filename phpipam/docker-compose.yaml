@@ -2,6 +2,7 @@ version: '2'
 services:
   phpipam:
     image: pierrecdn/phpipam
+    container_name: phpipam
     restart: always
     environment:
       - MYSQL_ENV_MYSQL_USER=root

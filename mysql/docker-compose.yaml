@@ -1,10 +1,11 @@
 version: '2'
 services:
   mysql:
-      image: mysql:5.6
-      environment:
-        - MYSQL_ROOT_PASSWORD=${MYSQLPASSWORD}
-      restart: always
-      volumes:
-        - /etc/localtime:/etc/localtime:ro
-        - ${DOCKERHOME}/mysql/dbdata:/var/lib/mysql
+    image: mysql:5.6
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQLPASSWORD}
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERHOME}/mysql/dbdata:/var/lib/mysql

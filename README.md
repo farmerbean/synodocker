@@ -1,6 +1,6 @@
 # synodocker
 
-This is my docker-compose repo for spinning up Docker services on Synology NAS (DS1515+ with DSM6x). There are three accompanying medium.com stories that relate to this repo that cover:
+This is my docker-compose repo for spinning up Docker services on Synology NAS (DS1515+ with DSM6.x). There are three accompanying medium.com stories that relate to this repo that cover:
 
  1. Configuring DDNS with Cloudflare and generating a TLS certificate
  2. Configuring macvlan networking on Synology for Docker containers
@@ -12,6 +12,9 @@ Service environment  variables are in ~/.env
  - lazydocker
  - portainer
  - pi-hole
+ - auto-YouTube-Downloader
+ - phpIpam
+ - MySQL (for phpIpam)
  
 ## Start/Stop Services
      $ sudo docker-compose up -d <service>

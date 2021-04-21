@@ -2,7 +2,7 @@ version: '2'
 services:
   pihole:
     container_name: ${PIHOST}
-    image: pihole/pihole:v5.0
+    image: pihole/pihole:latest
     hostname: ${PIHOST}
     domainname: ${DOMAINNAME}
     mac_address: d0:ca:ab:cd:ef:01
@@ -20,8 +20,7 @@ services:
       ServerIP: ${PIIPV4}
       WEBPASSWORD: password
       VIRTUAL_HOST: ${PIHOST}.${DOMAINNAME}
-      DNS1: 1.1.1.1 #cloudflare
-      DNS2: 9.9.9.9 #quad9
+      PIHOLE_DNS_: 127.0.0.1#5053;1.1.1.1;9.9.9.9
       DNSMASQ_LISTENING: all
       TZ: "Europe/Amsterdam"
     volumes:

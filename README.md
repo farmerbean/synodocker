@@ -13,8 +13,8 @@ Service environment  variables are in ~/.env
  - portainer
  - pi-hole
  - auto-YouTube-Downloader
- - phpIpam
- - MySQL (for phpIpam)
+ - phpipam
+ - MySQL (for phpipam)
  
 ## Start/Stop Services
      $ sudo docker-compose up -d <service>

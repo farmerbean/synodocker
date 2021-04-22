@@ -20,11 +20,11 @@ Service environment  variables are in ~/.env
      $ sudo docker-compose up -d <service>
      $ sudo docker-compose down -d <service>
 
-## Updating
+## Updating Services
 
-    $ sudo docker-compose pull
+    $ sudo docker-compose pull <service>
     
-    $ sudo docker-compose up -d  
+    $ sudo docker-compose up -d <service>
 
 ## Networking  
 

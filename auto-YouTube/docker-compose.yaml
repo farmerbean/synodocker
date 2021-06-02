@@ -1,7 +1,7 @@
 version: '2'
 services:
   autoyoutube:
-    image: xiovv/go-auto-yt:stable
+    image: tons/auto-youtube-dl:stable
     container_name: auto-youtube
     restart: always
     volumes:

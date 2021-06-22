@@ -8,7 +8,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/autoyt/downloads:/workdir:rw
       - ${CERTHOME}:/certs:ro
-      - ${DOCKERHOME}/autoyt/config:/etc/youtube-dl.conf
+      - ${DOCKERHOME}/autoyt/config:/config
     environment:
       - PUID=1234
       - PGID=5678

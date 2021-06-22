@@ -2,13 +2,14 @@ version: '2'
 services:
   autoyoutube:
     image: mikenye/youtube-dl:latest
-    container_name: auto-youtube
+    container_name: autoyt
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERHOME}/autoyt/downloads:/app/downloads
+      - ${DOCKERHOME}/autoyt/downloads:/workdir:rw
       - ${CERTHOME}:/certs:ro
-      - ${DOCKERHOME}/autoyt/config:/app/config
+      - ${DOCKERHOME}/autoyt/config:/etc/youtube-dl.conf
+      - ${DOCKERHOME}/autoyt/.netrc:/home/dockeruser/.netrc:ro
     environment:
       - PUID=1234
       - PGID=5678

@@ -1,13 +1,14 @@
 version: '2'
 services:
   autoyoutube:
-    image: mikenye/youtube-dl:latest
-    container_name: autoyt
+    image: blackmix/ytd2
+    container_name: auto-youtube
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERHOME}/autoyt/downloads:/workdir:rw
+      - ${DOCKERHOME}/autoyt/downloads:/app/downloads
       - ${CERTHOME}:/certs:ro
+      - ${DOCKERHOME}/autoyt/config:/app/config
     environment:
       - PUID=1234
       - PGID=5678

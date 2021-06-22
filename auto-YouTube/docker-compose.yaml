@@ -9,7 +9,6 @@ services:
       - ${DOCKERHOME}/autoyt/downloads:/workdir:rw
       - ${CERTHOME}:/certs:ro
       - ${DOCKERHOME}/autoyt/config:/etc/youtube-dl.conf
-      - ${DOCKERHOME}/autoyt/.netrc:/home/dockeruser/.netrc:ro
     environment:
       - PUID=1234
       - PGID=5678

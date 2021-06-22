@@ -9,7 +9,7 @@ services:
       - ${DOCKERHOME}/autoyt/downloads:/app/downloads
       - ${CERTHOME}:/certs:ro
       - ${DOCKERHOME}/autoyt/config:/app/config
-      - ${DOCKERHOME}/autoyt/appdaata:/app/appdata
+      - ${DOCKERHOME}/autoyt/appdata:/app/appdata
       - ${DOCKERHOME}/autoyt/audio:/app/audio
       - ${DOCKERHOME}/autoyt/subscriptions:/app/subscriptions
       - ${DOCKERHOME}/autoyt/users:/app/users

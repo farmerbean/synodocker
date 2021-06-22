@@ -19,7 +19,7 @@ services:
       - PGID=5678
       - UMASK_SET=022
     ports:
-    - 8998:17442
+      - 8998:17442
 volumes:
   downloads:
   config:

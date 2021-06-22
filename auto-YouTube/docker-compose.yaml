@@ -19,7 +19,7 @@ services:
       - PGID=5678
       - UMASK_SET=022
     ports:
-    - 8080:8080
+    - 8084:8084
 volumes:
   downloads:
   config:

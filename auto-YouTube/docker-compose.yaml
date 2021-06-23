@@ -20,7 +20,7 @@ services:
     environment: 
       ALLOW_CONFIG_MUTATIONS: 'true'
     ports:
-      - 8080:8080
+      - 8998:17442
 volumes:
   downloads:
   config:

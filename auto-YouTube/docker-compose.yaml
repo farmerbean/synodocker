@@ -17,7 +17,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - ALLOW_CONFIG_MUTATIONS: 'true'
+      ALLOW_CONFIG_MUTATIONS: "true"
     ports:
       - 8998:17442
 volumes:

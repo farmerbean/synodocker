@@ -1,7 +1,7 @@
 version: '2'
 services:
   autoyoutube:
-    image: tzahi12345/youtubedl-material:latest
+    image: tzahi12345/youtubedl-material:nightly
     container_name: auto-YouTube
     restart: always
     volumes:
@@ -15,9 +15,9 @@ services:
       - ${DOCKERHOME}/autoyt/users:/app/users
       - ${DOCKERHOME}/autoyt/video:/app/video
     environment:
-      - PUID=1234
-      - PGID=5678
-      - UMASK_SET=022
+      - PUID=1000
+      - PGID=1000
+      - ALLOW_CONFIG_MUTATIONS: 'true'
     ports:
       - 8998:17442
 volumes:

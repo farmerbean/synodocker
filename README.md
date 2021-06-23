@@ -10,9 +10,9 @@ This is my docker-compose repo for spinning up Docker services on Synology NAS (
 Service environment  variables are in ~/.env
 ### Services:
  - lazydocker
- - portainer
+ - portainer 1.24.x
  - pi-hole
- - auto-YouTube-Downloader
+ - YoutubeDL-Material
  - phpipam
  - MySQL (for phpipam)
  

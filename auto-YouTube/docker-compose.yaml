@@ -11,8 +11,7 @@ services:
       - ${DOCKERHOME}/autoyt/audio:/app/audio
       - ${DOCKERHOME}/autoyt/subscriptions:/app/subscriptions
       - ${DOCKERHOME}/autoyt/users:/app/users
-      - ${DOCKERHOME}/autoyt/v1video:/app/video
-      - ${AUTOYTVIDEOS}:/app/videos
+      - ${AUTOYTVIDEOS}:/app/video
     environment:
       - PUID=1000
       - PGID=1000

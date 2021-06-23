@@ -12,6 +12,7 @@ services:
       - ${DOCKERHOME}/autoyt/subscriptions:/app/subscriptions
       - ${DOCKERHOME}/autoyt/users:/app/users
       - ${DOCKERHOME}/autoyt/v1video:/app/video
+      - ${AUTOYTVIDEOS}:/app/videos
     environment:
       - PUID=1000
       - PGID=1000
@@ -19,6 +20,3 @@ services:
       ALLOW_CONFIG_MUTATIONS: 'true'
     ports:
       - 8998:17442
-volumes:
-  downloads:
-  config:

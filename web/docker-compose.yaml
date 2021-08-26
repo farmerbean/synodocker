@@ -20,7 +20,7 @@ services:
         container_name: web-be1
         volumes:
         - type: tmpfs
-        target: /www/
+            target: /www/
     web-be2:
         image: strm/helloworld-http
         read_only: true

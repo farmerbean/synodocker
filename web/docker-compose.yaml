@@ -8,7 +8,7 @@ services:
             - no-new-privileges:true
         restart: on-failure
         cap_drop:
-            - ALL
+        - ALL
         ports:
             - "80:8080"
         environment:
@@ -18,10 +18,10 @@ services:
         read_only: true
         container_name: web-be1
         cap_drop:
-            - ALL
+        - ALL
     web-be2:
         image: strm/helloworld-http
         read_only: true
         container_name: web-be2
         cap_drop:
-            - ALL
+        - ALL

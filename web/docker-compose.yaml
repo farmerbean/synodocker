@@ -9,7 +9,7 @@ services:
         read_only: true
         tmpfs:
             - /var/log/nginx/
-            - /run
+            - /run/
         ports:
             - "80:8080"
         environment:

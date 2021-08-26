@@ -16,16 +16,12 @@ services:
     web-be1:
         image: strm/helloworld-http
         read_only: true
-        security_opt:
-            - no-new-privileges:true
         container_name: web-be1
         cap_drop:
             - ALL
     web-be2:
         image: strm/helloworld-http
         read_only: true
-        security_opt:
-            - no-new-privileges:true
         container_name: web-be2
         cap_drop:
             - ALL

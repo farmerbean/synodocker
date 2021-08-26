@@ -19,11 +19,11 @@ services:
         read_only: true
         container_name: web-be1
         volumes:
-            - type: tmpfs
-            target: /www/
+        - type: tmpfs
+        target: /www/
     web-be2:
         image: strm/helloworld-http
         read_only: true
         container_name: web-be2
         tmpfs:
-            - /www/index.html
+        - /www/index.html

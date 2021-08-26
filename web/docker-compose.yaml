@@ -6,22 +6,24 @@ services:
         security_opt:
             - no-new-privileges:true
         restart: on-failure
+        read_only: true
         tmpfs:
             - /var/log/nginx/
             - /run/
+            - /
         ports:
             - "80:8080"
         environment:
             - "NODES=web-be1:80 web-be2:80"
     web-be1:
+        container_name: web-be1
         image: strm/helloworld-http
         read_only: true
-        container_name: web-be1
         tmpfs:
         - /www/
     web-be2:
+        container_name: web-be2
         image: strm/helloworld-http
         read_only: true
-        container_name: web-be2
         tmpfs:
         - /www/

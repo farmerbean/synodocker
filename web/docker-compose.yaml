@@ -10,7 +10,7 @@ services:
         tmpfs:
             - /var/log/nginx/
             - /run/
-            - /
+            - /nginx*
         ports:
             - "80:8080"
         environment:

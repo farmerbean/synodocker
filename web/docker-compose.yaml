@@ -6,6 +6,7 @@ services:
         security_opt:
             - no-new-privileges:true
         restart: on-failure
+        read_only: true
         ports:
             - "80:8080"
         environment:
@@ -14,7 +15,11 @@ services:
         image: strm/helloworld-http
         read_only: true
         container_name: web-be1
+        tmpfs:
+            - /www/index.html
     web-be2:
         image: strm/helloworld-http
         read_only: true
         container_name: web-be2
+        tmpfs:
+            - /www/index.html

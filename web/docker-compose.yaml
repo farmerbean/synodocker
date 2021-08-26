@@ -3,8 +3,6 @@ services:
     web-fe0:
         image: strm/nginx-balancer
         container_name: web-lb
-        security_opt:
-            - no-new-privileges:true
         restart: on-failure
         cap_drop:
         - ALL

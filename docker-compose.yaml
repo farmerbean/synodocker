@@ -43,11 +43,11 @@ services:
     networks:
       home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
   web:
-    extends:
-      service: web-fe0
-      depends_on:
+    depends_on:
       - web-be1
       - web-be2
+    extends:
+      service: web-fe0
       file: web/docker-compose.yaml 
     networks:
       home:

@@ -7,7 +7,7 @@ services:
         ports:
             - "80:8080"
         environment:
-            - "NODES=web1:80 web2:80"
+            - "NODES=web-be1:80 web-be2:80"
     web-be1:
         image: strm/helloworld-http
         container_name: web-be1

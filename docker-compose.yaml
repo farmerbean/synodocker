@@ -45,13 +45,14 @@ services:
   web:
     extends:
       service: web-fe0
+      depends_on:
+      - web-be1
+      - web-be2
       file: web/docker-compose.yaml 
     networks:
       home:
         ipv4_address: ${WEBIPV4}
   web-be1:
-    depends_on:
-      - web
     extends:
       service: web-be1
       file: web/docker-compose.yaml 
@@ -59,8 +60,6 @@ services:
       home:
         ipv4_address: ${WEBBE1IPV4}
   web-be2:
-    depends_on:
-      - web
     extends:
       service: web-be2
       file: web/docker-compose.yaml 

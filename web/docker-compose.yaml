@@ -2,15 +2,24 @@ version: '2'
 services:
     web-fe0:
         image: strm/nginx-balancer
+        read_only: true
         container_name: web-lb
-        restart: always
+        restart: on-failure
+        cap_drop:
+        - ALL
         ports:
             - "80:8080"
         environment:
             - "NODES=web-be1:80 web-be2:80"
     web-be1:
         image: strm/helloworld-http
+        read_only: true
         container_name: web-be1
+        cap_drop:
+        - ALL
     web-be2:
         image: strm/helloworld-http
+        read_only: true
         container_name: web-be2
+        cap_drop:
+        - ALL

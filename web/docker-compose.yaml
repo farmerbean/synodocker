@@ -1,6 +1,6 @@
 version: '2'
 services:
-    webfe:
+    web-fe0:
         image: strm/nginx-balancer
         container_name: web-lb
         restart: always
@@ -8,7 +8,9 @@ services:
             - "80:8080"
         environment:
             - "NODES=web1:80 web2:80"
-    web1:
+    web-be1:
         image: strm/helloworld-http
-    web2:
+        container_name: web-be1
+    web-be2:
         image: strm/helloworld-http
+        container_name: web-be2

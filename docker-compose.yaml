@@ -57,6 +57,7 @@ services:
       file: web/docker-compose.yaml 
     networks:
       home:
+        ipv4_address: ${WEBBE1IPV4}
   web-be2:
     depends_on:
       - web
@@ -65,6 +66,7 @@ services:
       file: web/docker-compose.yaml 
     networks:
       home:
+        ipv4_address: ${WEBBE2IPV4}
 
 networks:
   home:

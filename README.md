@@ -18,6 +18,7 @@ Service environment  variables are in ~/.env
 - YoutubeDL-Material
 - phpipam
 - MySQL (for phpipam)
+- nginx webLB (for external health-checks)
 
 ## Start/Stop Services
 

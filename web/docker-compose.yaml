@@ -2,11 +2,10 @@ version: '2'
 services:
     web-fe0:
         image: strm/nginx-balancer
-        read_only: true
         container_name: web-lb
         security_opt:
             - no-new-privileges:true
-        restart: on-failure
+        restart: on-failure:5
         cap_drop:
         - ALL
         ports:

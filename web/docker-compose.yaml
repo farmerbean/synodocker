@@ -6,7 +6,7 @@ services:
         container_name: web-lb
         security_opt:
             - no-new-privileges:true
-        restart: on-failure:5
+        restart: on-failure
         cap_drop:
             - ALL
         ports:

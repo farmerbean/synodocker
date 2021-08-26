@@ -6,7 +6,7 @@ services:
         container_name: web-lb
         security_opt:
             - no-new-privileges:true
-        restart: on-failure
+        restart: on-failure:2
         cap_drop:
         - ALL
         ports:
@@ -16,8 +16,12 @@ services:
     web-be1:
         image: strm/helloworld-http
         read_only: true
+        security_opt:
+            - no-new-privileges:true
         container_name: web-be1
     web-be2:
         image: strm/helloworld-http
         read_only: true
+        security_opt:
+            - no-new-privileges:true
         container_name: web-be2

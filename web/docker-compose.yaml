@@ -6,7 +6,6 @@ services:
         security_opt:
             - no-new-privileges:true
         restart: on-failure
-        read_only: true
         tmpfs:
             - /var/log/nginx/
             - /run/

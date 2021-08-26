@@ -13,11 +13,11 @@ Service environment  variables are in ~/.env
 ### Services
 
 - lazydocker
--portainer 1.24.x
--pi-hole
--YoutubeDL-Material
--phpipam
--MySQL (for phpipam)
+- portainer 1.24.x
+- pi-hole
+- YoutubeDL-Material
+- phpipam
+- MySQL (for phpipam)
 
 ## Start/Stop Services
 

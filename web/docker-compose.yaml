@@ -4,15 +4,15 @@ services:
         image: strm/nginx-balancer
         container_name: web-lb
         security_opt:
-            - no-new-privileges:true
+        - no-new-privileges:true
         restart: on-failure
         tmpfs:
-            - /var/log/nginx/
-            - /run/
+        - /var/log/nginx/
+        - /run/
         ports:
-            - "80:8080"
+        - "80:8080"
         environment:
-            - "NODES=web-be1:80 web-be2:80"
+        - "NODES=web-be1:80 web-be2:80"
     web-be1:
         container_name: web-be1
         image: strm/helloworld-http

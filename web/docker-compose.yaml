@@ -6,6 +6,7 @@ services:
         security_opt:
         - no-new-privileges:true
         restart: on-failure
+#        cap_drop: ALL
         tmpfs:
         - /var/log/nginx/
         - /run/

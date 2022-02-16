@@ -20,8 +20,8 @@ services:
       ServerIP: ${PIIPV4}
       WEBPASSWORD: password
       VIRTUAL_HOST: ${PIHOST}.${DOMAINNAME}
-      PIHOLE_DNS_: 127.0.0.1#5053;1.1.1.1;9.9.9.9
-      DNSMASQ_LISTENING: all
+      PIHOLE_DNS_: 1.1.1.1;9.9.9.9
+      DNSMASQ_LISTENING: localonly
       TZ: "Europe/Amsterdam"
     volumes:
       - /etc/localtime:/etc/localtime:ro

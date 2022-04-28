@@ -1,2 +1,3 @@
 .vscode/settings.json
 /pihole/config/external.conf
+/env/*

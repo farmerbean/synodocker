@@ -19,6 +19,7 @@ Service environment  variables are in ~/.env
 - phpipam
 - MySQL (for phpipam)
 - nginx webLB (for external health-checks)
+- deCONZ for Conbee2
 
 ## Start/Stop Services
 

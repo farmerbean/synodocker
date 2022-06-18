@@ -1,0 +1,26 @@
+version: "2"
+services:
+  deconz:
+    image: deconzcommunity/deconz
+    container_name: deconz
+    restart: always
+    ports: 
+      - 80:80
+      - 443:443
+    volumes:
+#      - /opt/deconz:/opt/deCONZ
+      - /etc/localtime:/etc/localtime:ro
+      - ${DOCKERHOME}/dconz/opt:/opt/deCONZ
+    devices:
+      - /dev/ttyACM0
+    environment:
+      - DECONZ_WEB_PORT=80
+      - DECONZ_WS_PORT=443
+      - DEBUG_INFO=1
+      - DEBUG_APS=0
+      - DEBUG_ZCL=0
+      - DEBUG_ZDP=0
+      - DEBUG_OTAU=0
+# Needed for Synology https://github.com/deconz-community/deconz-docker#notes-for-synology-users
+      - DECONZ_UID=0
+      - DECONZ_GID=0

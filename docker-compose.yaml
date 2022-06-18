@@ -1,5 +1,13 @@
 version: '2'
 services:
+
+  deCONZ:
+    extends:
+      service: deCONZ
+      file: deconz/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: ${DECONZIPV4}
   pihole:
     extends:
       service: pihole
@@ -42,30 +50,30 @@ services:
       file: mysql/docker-compose.yaml
     networks:
       home: # NO IP Address Required but stops docker-compose creating a second service_default macvlan
-  web:
-    depends_on:
-      - web-be1
-      - web-be2
-    extends:
-      service: web-fe0
-      file: web/docker-compose.yaml 
-    networks:
-      home:
-        ipv4_address: ${WEBIPV4}
-  web-be1:
-    extends:
-      service: web-be1
-      file: web/docker-compose.yaml 
-    networks:
-      home:
-        ipv4_address: ${WEBBE1IPV4}
-  web-be2:
-    extends:
-      service: web-be2
-      file: web/docker-compose.yaml 
-    networks:
-      home:
-        ipv4_address: ${WEBBE2IPV4}
+  # web:
+  #   depends_on:
+  #     - web-be1
+  #     - web-be2
+  #   extends:
+  #     service: web-fe0
+  #     file: web/docker-compose.yaml 
+  #   networks:
+  #     home:
+  #       ipv4_address: ${WEBIPV4}
+  # web-be1:
+  #   extends:
+  #     service: web-be1
+  #     file: web/docker-compose.yaml 
+  #   networks:
+  #     home:
+  #       ipv4_address: ${WEBBE1IPV4}
+  # web-be2:
+  #   extends:
+  #     service: web-be2
+  #     file: web/docker-compose.yaml 
+  #   networks:
+  #     home:
+  #       ipv4_address: ${WEBBE2IPV4}
 
 networks:
   home:

@@ -1,5 +1,12 @@
 version: '2'
 services:
+  hass:
+    extends:
+      service: hass
+      file: hass/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: ${HASSIPV4}
   deCONZ:
     extends:
       service: deCONZ

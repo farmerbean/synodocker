@@ -3,11 +3,11 @@ services:
   deCONZ:
     image: deconzcommunity/deconz
     container_name: deconz
-#    network_mode: host
+    network_mode: host
     restart: always
     ports: 
-      - 80:80
-      - 443:443
+      - 8090:80
+      - 4433:443
     volumes:
 #      - /opt/deconz:/opt/deCONZ
       - /etc/localtime:/etc/localtime:ro

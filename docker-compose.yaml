@@ -11,9 +11,9 @@ services:
     extends:
       service: deCONZ
       file: deconz/docker-compose.yaml
-    networks:
-      home:
-        ipv4_address: ${DECONZIPV4}
+    # networks:
+    #   home:
+    #     ipv4_address: ${DECONZIPV4}
   pihole:
     extends:
       service: pihole

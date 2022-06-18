@@ -3,6 +3,7 @@ services:
   deCONZ:
     image: deconzcommunity/deconz
     container_name: deconz
+#    network_mode: host
     restart: always
     ports: 
       - 80:80

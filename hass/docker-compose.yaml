@@ -9,4 +9,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
     restart: always
     privileged: true
-    network_mode: host
+#    network_mode: host

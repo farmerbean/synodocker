@@ -10,7 +10,7 @@ services:
     volumes:
 #      - /opt/deconz:/opt/deCONZ
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERHOME}/dconz/opt:/opt/deCONZ
+      - ${DOCKERHOME}/deconz/opt:/opt/deCONZ
     devices:
       - /dev/ttyACM0
     environment:

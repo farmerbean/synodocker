@@ -1,6 +1,6 @@
 version: "2"
 services:
-  deconz:
+  deCONZ:
     image: deconzcommunity/deconz
     container_name: deconz
     restart: always

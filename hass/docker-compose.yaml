@@ -1,0 +1,12 @@
+version: '2'
+services:
+  hass:
+    container_name: hass
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ${DOCKERHOME}/hass/config:/config
+#      - ${CERTHOME}:/home/pi/certs:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    privileged: true
+    network_mode: host

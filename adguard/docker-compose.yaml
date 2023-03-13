@@ -3,6 +3,7 @@ services:
   adguard:
     image: adguard/adguardhome
     container_name: adguard
+    hostname: ${ADHOST}
     domainname: ${DOMAINNAME}
     cap_add:
       - NET_ADMIN
@@ -18,8 +19,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/adguard/workdir:/opt/adguardhome/work
       - ${DOCKERHOME}/adguard/conf:/opt/adguardhome/conf
+      - ${CERTHOME}:/opt/adguardhome/certs:ro
     environment:
       ServerIP: ${ADGUARDIPV4}
+      VIRTUAL_HOST: ${ADHOST}.${DOMAINNAME}
       DNSMASQ_LISTENING: localonly
       TZ: "Europe/Amsterdam"
     restart: always

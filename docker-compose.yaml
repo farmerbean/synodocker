@@ -7,6 +7,13 @@ services:
     networks:
       home:
         ipv4_address: ${HASSIPV4}
+  adguard:
+    extends:
+      service: adguard
+      file: adguard/docker-compose.yaml
+    networks:
+      home:
+        ipv4_address: ${ADGUARDIPV4}
   deCONZ:
     extends:
       service: deCONZ

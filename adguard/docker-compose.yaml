@@ -15,4 +15,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/adguard/workdir:/opt/adguardhome/work
       - ${DOCKERHOME}/adguard/conf:/opt/adguardhome/conf
+    environment:
+      ServerIP: ${ADGUARDIPV4}
     restart: always

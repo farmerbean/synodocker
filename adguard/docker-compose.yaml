@@ -13,7 +13,7 @@ services:
       - 853/tcp
       - 3000/tcp
       - 80/tcp
-     # - 443/tcp
+      - 443/tcp
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/adguard/workdir:/opt/adguardhome/work

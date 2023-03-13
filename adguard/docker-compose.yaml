@@ -3,18 +3,23 @@ services:
   adguard:
     image: adguard/adguardhome
     container_name: adguard
+    domainname: ${DOMAINNAME}
+    cap_add:
+      - NET_ADMIN
     ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 784:784/udp
-      - 853:853/tcp
-      - 3000:3000/tcp
-      - 80:80/tcp
-      - 443:443/tcp
+      - 53/tcp
+      - 53/udp
+      - 784/udp
+      - 853/tcp
+      - 3000/tcp
+      - 80/tcp
+      - 443/tcp
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DOCKERHOME}/adguard/workdir:/opt/adguardhome/work
       - ${DOCKERHOME}/adguard/conf:/opt/adguardhome/conf
     environment:
       ServerIP: ${ADGUARDIPV4}
+      DNSMASQ_LISTENING: localonly
+      TZ: "Europe/Amsterdam"
     restart: always

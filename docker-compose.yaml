@@ -1,5 +1,10 @@
 version: '2'
 services:
+  cloudflared:
+    extends:
+      service: cloudflared
+      file: cloudflared/docker-compose.yaml
+    network_mode: host
   hass:
     extends:
       service: hass

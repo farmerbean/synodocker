@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    network_mode: host
+    # Using host network so it can reach all services on the NAS
+    # including Plex, SickGear, AdGuard, and OpenClaw

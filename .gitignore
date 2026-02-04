@@ -1,3 +1,5 @@
 .vscode/settings.json
 /pihole/config/external.conf
-/env/*
+/env/*.env
+.env
+.gitignore

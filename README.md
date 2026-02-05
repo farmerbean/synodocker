@@ -13,6 +13,8 @@ Service environment  variables are in ~/.env
 ### Services
 
 - lazydocker
+- cloudflared
+- openclaw :rolling_eyes:
 - Adguard
 - portainer 1.24.x
 - pi-hole

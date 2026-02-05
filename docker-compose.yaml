@@ -5,6 +5,10 @@ services:
       service: cloudflared
       file: cloudflared/docker-compose.yaml
     network_mode: host
+  openclaw:
+    extends:
+      service: openclaw
+      file: openclaw/docker-compose.yaml
   hass:
     extends:
       service: hass

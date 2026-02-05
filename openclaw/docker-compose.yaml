@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  openclaw-gateway:
+    image: ghcr.io/phioranex/openclaw-docker:latest
+    container_name: openclaw
+    restart: unless-stopped
+    command: gateway start --foreground
+    ports:
+      - "18789:18789"
+    volumes:
+      - ./config:/home/node/.openclaw
+      - ./workspace:/home/node/.openclaw/workspace
+    # Uncomment if you get permission errors (Synology often needs this)
+    # user: "1000:1000"
+
+  # One-off container for running CLI commands
+  openclaw-cli:
+    image: ghcr.io/phioranex/openclaw-docker:latest
+    profiles: ["cli"]  # Only runs when explicitly called
+    volumes:
+      - ./config:/home/node/.openclaw
+      - ./workspace:/home/node/.openclaw/workspace
+    # user: "1000:1000"
